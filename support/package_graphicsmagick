@@ -110,7 +110,7 @@ echo ">>> Building graphicsmagick"
 
 # build and package imagemagick for heroku
 cd $tempdir/GraphicsMagick-${GRAPHICS_MAGICK_VERSION}
-./configure --prefix /app/vendor/graphicsmagick --with-quantum-depth 16 && make install
+./configure --with-quantum-depth=16 --prefix /app/vendor/graphicsmagick && make install
 
 echo ">>> Uploading graphics magick artifact"
 echo "    to ${S3_BUCKET}/${REMOTE_PATH}"
